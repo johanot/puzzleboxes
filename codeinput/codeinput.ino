@@ -55,8 +55,11 @@ Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS)
 int count = 0;
 String code;
 String codes[5][1] = {
-  {"1111"},
-  {"1111"} 
+  {"5842"}, //SortArray
+  {"5297"}, //Egonolsen
+  {"9537"}, //NotLast
+  {"2419"}, //Morse
+  {"3428"}  //Fibonacci
 };
 
 char buf[16 ];
@@ -100,7 +103,7 @@ void loop() {
       lcd.clear();
       count++;
       lcd.setCursor(0, 0);
-      if (count < 2)
+      if (count < 5)
         sprintf(buf, "Indtast kode %d", count + 1);
       else
         sprintf(buf, "Du vandt!");
